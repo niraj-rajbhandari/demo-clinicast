@@ -1,0 +1,271 @@
+/* 
+    Document   : style
+    Created on : Feb 3, 2014, 3:54:25 PM
+    Author     : Niraj Rajbhandari
+    Description:
+        basic styling of the application
+*/
+
+/*************************
+*     GLOBAL STYLING     *
+*************************/
+
+/* CSS RESET (HTML5 Doctor) */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font:100% Arial, Helvetica, sans-serif;
+    font-size:14px;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+a:hover, a:active {
+    outline:0;
+    text-decoration:underline;
+}
+img {border:0;}
+ul li {
+    list-style-type:none;
+    /*float:left;*/
+}
+/* HTML5 - OLDER BROWSERS COMPATIBILITY */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {display:block;}
+
+/************************
+*     OTHER STYLING     *
+************************/
+.header{
+    height:57px;
+    background-color:#dddddd;
+    margin-bottom:20px;
+    padding:5px 10px;
+}
+.logo_cont{
+    max-width:1268px;
+    height:57px;
+    margin:0 auto;
+    position:relative;
+}
+.logo_cont img{
+    width:100px;
+    height:30px;
+    float:left;
+    margin:12px 0 0 0px;
+}
+/* FOOTER */
+footer{
+    background-color:#dddddd;
+}
+.footer{
+    max-width:1268px;
+    height:50px;
+    margin:0 auto 10px;
+
+}
+.footer_img{
+    float:right;
+    margin:12px 0 0 0;
+}
+.footer span{
+    float:right;
+    font-size:13px;
+    color:#4d4d52;
+    font-weight:bold;
+    margin:10px 5px 0 0;
+}
+.powered{
+    width:100px;
+    height:22px;
+    float:right;
+    margin:0px 0 0 0;
+    background:url('../images/clinicast.png') no-repeat; 
+}
+
+
+/** overriding bootstrap css **/
+.tab-content{
+    max-width:1002px;
+    margin:0 auto;
+}
+.hospital-cancer-info{
+    margin:5px 0 ;
+}
+.hospital-cancer-header{
+    font-size:12px;
+    color:#909090;
+
+}
+.hospital-cancer-header-value{
+    margin:0 10px 0 0;
+    /*color: #8a162f;*/
+    color:#274B6D;
+    font-weight: bold;
+}
+ul.nav.nav-pills{
+
+    border-radius: 5px;
+    padding:8px;
+    margin:0 80px;
+}
+ul.nav.nav-pills a{
+    color: #173B93;
+    font-weight: bold;
+}
+ul.nav.nav-pills a:hover{
+    color:black;
+}
+ul.nav.nav-pills li.active:hover a{
+    background:#ccc;
+    color:black;
+}
+ul.nav.nav-pills li.active a{
+    background:#151515;
+    color: #EEEEEE;
+}
+ul.thumbnails li{
+    margin-left:0 !important;
+    margin-right:1.5%;
+}
+
+/**custom css **/
+.highcharts-button{
+    display:none;
+}
+/** summary report page **/
+.summary-thumbs-container{
+    margin:0 auto;
+}
+.summary-container{
+    min-height:190px;
+    height:195px;
+    height:auto !important;
+    border-radius:6px;
+}
+.summary-container p{
+    margin:10px 5px;
+}
+.summary-overall-grade{
+    font-weight:bold;
+    font-size:25px;
+    float:left;
+    color:#173B93;
+    padding:10px;
+}
+.overall-grade-value{
+    font-weight:bold;
+    font-size:50px;
+    color:#173B93;
+    position:relative;
+    left:130px;
+}
+.summary-overall-grade-red{
+    color:#fd1f27;
+}
+.summary-overall-grade-yellow{
+    color: #fde51f;
+}
+.summary-overall-grade-green{
+    color:#369A56;
+}
+.dial-graph .highcharts-data-labels tspan[dx="0"]{
+    font-size:5px;
+    color:#e8e8e8;
+}
+.overall-grade{
+    background:#ccc;
+    padding-left: 5px;
+}
+
+.stacked-chart{
+    height:300px;margin:5px 0;width:670px
+}
+.sidebar{
+    height:300px; width:200px;margin:0px 30px;
+}
+.staff-performace-sidebar{
+    margin:0 auto;
+}
+.info-box{
+    height:135px;
+    margin: 5px 10px 10px 0;
+    width:200px;
+    float:left;
+    background:#F4F6FF;
+}
+.worst-performance-measure{
+    margin:10px 0px;
+}
+.performer-value{
+    margin-left:20px;
+}
+.staff-performance-lower .info-box{
+    width:290px;
+}
+.info-box .infobox-header{
+    float:left;
+}
+.info-box .infobox-header p{
+    color:#173B93;
+    font-size:25px;
+    padding: 15px 5px 10px;
+}
+.info-box .content{
+    float:left;
+    position:relative;
+    left:60px;
+}
+.staff-performance-lower .info-box .content{
+    left:100px;
+}
+.info-box .performer-title{
+    font-size:12px;
+    color:#746F6F;
+}
+.info-box .performer-value{
+    font-size:14px;
+    font-weight:bold;
+}
+
+.barchart{
+    width:170px;
+    float:left;
+    height:450px;
+    margin:5px 2px;
+}
+.barchart-first{
+    width:230px;
+    float:left;
+    height:450px;
+    margin:5px 2px;
+}
+
+#cost-in-level {
+    color: #232C51;
+    font-size: 24px;
+    font-weight: bold;
+}
+.cost-column{
+    text-align:center !important;
+}
+.font-bold{
+    font-weight:bold;
+}
+.div-span3{
+     width: 18.077% !important;
+}
+#table-wrap .table tbody tr td,#table-net-wrap .table tbody tr td{
+    font-size:13px;
+    color:#232A45;
+}
+#cost-analysis{
+    margin-top:-25px;
+}
+
+#top-income-department-level,#top-cost-department-level{
+    font-size:13px;
+}

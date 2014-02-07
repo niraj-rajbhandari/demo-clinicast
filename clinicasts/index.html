@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ARTO</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <!-- CSS -->
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="css/sticky-footer.css" rel="stylesheet">
+        <link href="css/binod_styles.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="wrap">
+            <!-- HEADER -->
+            <div class="tabbable">
+                <div class="header">
+                    <div class="logo_cont">
+                        <img src="images/arto.png"  alt="image" />
+                        <ul class="nav nav-pills pull-left">
+                            <li class="active"><a href="#summary-report" id="report-summary">Summary Report</a></li>
+                            <li><a href="#staff-performance" id="performance-staff">Staff Performance</a></li>
+                            <li><a href="#cost-analysis" id="analysis-cost">Cost Analysis</a></li>
+                        </ul>
+                        <div class="selector pull-right" style="margin-top:10px;">
+                            <p>
+                                <span style="position:relative;bottom:5px;font-size:12px;">
+                                    Hospital:
+                                </span>
+                                <select id="hospital" style="width:120px;font-size:12px; ">
+                                    <option value="All">All</option>
+                                    <option value="Hospital 1">Hospital 1</option>
+                                    <option value="Hospital 2">Hospital 2</option>
+                                </select>
+                                <span style="position:relative;bottom:5px;font-size:12px;">
+                                    Cancer:
+                                </span>
+                                <select id="cancer" style="width:120px;font-size:12px;">
+                                    <option value="All">All</option>
+                                    <option value="Breast Cancer">Breast Cancer</option>
+                                    <option value="Lung Cancer">Lung Cancer</option>
+                                </select>
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Begin page content -->
+                <div class="container">
+
+
+
+                    <div class="tab-content">
+                        <div class="span4 pull-left hospital-cancer-info">
+                            <span class="hospital-cancer-header">Hospital : </span><span class="hospital-cancer-header-value" id="hospital-header-value"></span>
+
+                            <span class="hospital-cancer-header">Cancer : </span><span class="hospital-cancer-header-value" id="cancer-header-value"></span>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="tab-pane active" id="summary-report">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <ul class="thumbnails summary-thumbs-container">
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="staff-performance">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="barchart-first img-polaroid" id="barchart-Cost">
+
+                                    </div>
+                                    <div class="barchart img-polaroid" id="barchart-Outcome">
+
+                                    </div>
+                                    <div class="barchart img-polaroid" id="barchart-Guideline-Performance">
+
+                                    </div>
+                                    <div class="barchart img-polaroid" id="barchart-Quality-of-Life">
+
+                                    </div>
+                                    <div class="barchart img-polaroid" id="barchart-Patient-Satisfaction">
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="cost-analysis">
+                            <div style="margin-left:5px;">
+
+                                <div class="row-fluid" id="record-header">
+                                    <div class="span4 pull-right">
+                                        <a href="#" title="Over Total Cost" class="over-all-cost">
+                                            <div class="box box-active img-polaroid img-rounded">
+                                                <span class="box-header">Overall Total Cost</span><br>
+                                                <span class="cost-number number-large overall-cost"></span>
+                                            </div>
+                                        </a>
+                                        <a href="#" title="Net Income" class="net-income">
+                                            <div class="box img-polaroid img-rounded">
+                                                <span class="box-header">Net Income</span><br>
+                                                <span class="cost-number number-large total-net-income"></span>
+                                                <span class="hiden-net-income"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row-fluid">
+                                    <div class="div-span3">
+                                        <div class="category-list">
+                                            <ul id="categories">
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="span9 overall-cost-tab" id="chart-wrap" style="display:none">
+                                        <div class="chart pie-chart"></div>
+                                        <div class="total-costs row-fluid">
+                                            <div class="span7">
+                                                <span class="total-cost-level">Top Cost Department:</span>
+                                                <span class="cost-number bold" id="top-cost-department-value"></span><span class="in-level">in <span id="top-cost-department-level"></span></span>
+                                            </div>
+                                            <div class=" span5">
+                                                <span class="total-cost-level">Total Cost in <span id="total-cost-in-category-level"></span>:</span>
+                                                <span class="cost-number bold" id="total-cost-in-category-value" ></span>
+                                            </div>
+                                        </div> <!-- end of chart row -->
+                                        <div class="row-fluid" id="table-wrap">
+                                            <div class="span6 offset3">
+                                                <table id="table0" class="table table-condensed table-hover cost-table">
+                                                    <thead>
+                                                        <tr>
+
+                                                            <th>Department</th>
+                                                            <th class="cost-column">Cost</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="span9 net-income-tab" style="display:none;">
+                                        <div class="chart net-income-chart"></div>
+                                        <div class="total-costs row-fluid">
+                                            <div class="span7">
+                                                <span class="total-income-level">Total Net Income Department:</span>
+                                                <span class="cost-number bold" id="top-income-department-value"></span><span class="in-level">in <span id="top-income-department-level"></span></span>
+                                            </div>
+                                            <div class=" span5 pull-right">
+                                                <span class="total-cost-level">Total Net Income in <span id="total-income-in-category-level"></span>:</span>
+                                                <span class="cost-number bold" id="total-income-in-category-value" ></span>
+                                            </div>
+                                        </div>  <!--end of chart row -->
+                                        <div class="row-fluid" id="table-net-wrap">
+                                            <div class="span6 offset3">
+                                                <table id="table1" class="table table-condensed table-hover table-striped cost-table net-income-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Department</th>
+                                                            <th class="cost-column">Cost</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="push"></div>
+        </div>
+
+        <div id="footer">
+            <div class="container">
+                <div class="footer_img">
+                    <div class="powered"></div>
+                    <span>powered by</span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--
+        ================================================== -->
+        <script src="js/jquery-1.8.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/highcharts.js"></script>
+        <script src="js/highcharts-more.js"></script>
+        <script src="js/exporting.js"></script>
+        <script src="js/cost_department.js"></script>
+        <script src="js/income_department.js"></script>
+        <script src="js/sub_department_cost.js"></script>
+        <script src="js/over_all_cost_income.js"></script>
+        <script src="js/categories.js"></script>
+        <script src="js/global_variables.js"></script>
+        <script src="js/html_loader.js"></script>
+        <script src="js/event_handler.js"></script>
+        <script>
+            $(document).ready(function() {
+                $event_handler.onPageLoad();
+            });
+        </script>
+
+    </body>
+</html>

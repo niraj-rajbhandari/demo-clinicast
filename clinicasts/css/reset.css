@@ -1,0 +1,32 @@
+/* 
+    Document   : reset
+    Created on : Feb 3, 2014, 3:52:59 PM
+    Author     : Niraj Rajbhandari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+*{
+    margin:0;
+    padding:0;
+}
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}

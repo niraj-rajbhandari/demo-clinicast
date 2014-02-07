@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <title>ARTO - Patient Cost Analysis</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+
+    <body>
+        <!-- header starts -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="images/arto.png" alt="logo" title="ARTO" />
+                </div>
+            </div>
+        </header><!-- header ends -->
+        <!-- content starts -->
+        <section id="content">
+            <div class="container" style="padding-top:30px;">
+                <div class="row" id="record-header">
+                    <div class="col-md-4">
+                        <span>Patient</span>
+                        <h2 class="patient-name">Dorothy Rogers</h2></div>
+                    <div class="col-md-8">
+                        <a href="#" title="Over Total Cost">
+                            <div class="box box-active">
+                                <span class="box-header">Overall Total Cost</span><br>
+                                <span class="cost-number number-large">$288,282</span>
+                            </div>
+                        </a>
+                        <a href="#" title="Net Income">
+                            <div class="box">
+                                <span class="box-header">Net Income</span><br>
+                                <span class="cost-number number-large">$-95,772</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3 col-md-3">
+                        <div class="category-list">
+                            <ul id="categories">
+                                <li class="active">All Categories</li>
+                                <li>ICU & CCU</li>
+                                <li>Pharmacy & IV</li>
+                                <li>Lab & Path</li>
+
+                                <li>Blood</li>
+                                <li>OR/Recovery</li>
+                                <li>Imaging</li>
+                                <li>Respiratory Therapy</li>
+                                <li>Med/Surg</li>
+
+                                <li>Implants</li>
+                                <li>PT/OT/Speech/Audio</li>
+                                <li>Cardiology</li>
+                                <li>Supplies & DME</li>
+                                <li>Other</li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-9 col-md-9" id="chart-wrap">
+                        <div class="graph-title row">
+                            <h3>Cost in <span id="cost-in-level">Radiation</span> <span class="sub-title">(by <span id="by-level">Cost Departments</span>)</span></h3>
+                        </div>
+                        <div class="chart"></div>
+                        <div class="total-costs row">
+                            <div class="col-xs-7 col-md-7">
+                                <span class="total-cost-level">Top Cost Department:</span>
+                                <span class="cost-number bold" id="top-cost-department-value">$2,795.95</span><span class="in-level">in <span id="top-cost-department-level">Radiology MRI</span></span>
+                            </div>
+                            <div class=" col-xs-5 col-md-5">
+                                <span class="total-cost-level">Total Cost in <span id="total-cost-in-category-level">Med/Surg</span>:</span>
+                                <span class="cost-number bold" id="total-cost-in-category-value" >$6,436</span></span>
+                            </div>
+                        </div> <!-- end of chart row -->
+                        <div class="row">
+                            <div class="col-md-4" style="margin-top:20px;">
+                                Cost Breakdown by<br>
+                                <strong>Cost Sub Department under</strong>
+                            </div>
+                            <div class="col-md-8">
+                                <select id="department">
+                                    <option value="All Department" selected>All Department</option>
+                                    <option value="RADIOLOGY MRI">Radiology MRI</option>
+                                    <option value="N/S FLOORB">N/S FLOORB</option>
+                                    <option value="N/S ICUD">N/S ICUD</option>
+                                    <option value="PHARMACY COMBINED">PHARMACY COMBINED</option>
+                                    <option value="OPERATING ROOM">OPERATING ROOM</option>
+                                    <option value="CLIN LABS MICROBIOLOGY">CLIN LABS MICROBIOLOGY</option>
+                                    <option value="NUCLEAR MEDICINE CHS">NUCLEAR MEDICINE CHS</option>
+                                    <option value="CL- CYTOGENETICS">CL- CYTOGENETICS</option>
+                                    <option value="CLIN LABS BLOOD BANK">CLIN LABS BLOOD BANK</option>
+                                    <option value="N/S FLOORF">N/S FLOORF</option>
+                                    <option value="N/S FLOORO">N/S FLOORO</option>
+                                    <option value="N/S FLOORI">N/S FLOORI</option>
+                                    <option value="RADIOLOGY DIAGNOSTIC">RADIOLOGY DIAGNOSTIC</option>
+                                    <option value="CHEST 1 VIEW">CHEST 1 VIEW</option>
+                                    <option value="OPERATING ROOM/ANESTH SUPPORT">OPERATING ROOM/ANESTH SUPPORT</option>
+                                    <option value="CLIN LABS OUTSIDE CHEMISTRY">CLIN LABS OUTSIDE CHEMISTRY</option>
+                                    <option value="CL-HEM SPECIAL PROCEDURE">CL-HEM SPECIAL PROCEDURE</option>
+                                    <option value="CL - SUPPORT SERVICES PHLEBOTOMY">CL - SUPPORT SERVICES PHLEBOTOMY</option>
+                                    <option value="PATHOLOGY SURGICAL PATHOLOGY">PATHOLOGY SURGICAL PATHOLOGY</option>
+                                    <option value="RESPIRATORY THERAPY">RESPIRATORY THERAPY</option>
+                                    <option value="PATHOLOGY HISTOLOGY">PATHOLOGY HISTOLOGY</option>
+                                    <option value="RADIOLOGY CT">RADIOLOGY CT</option>
+                                    <option value="PACU POST ANESTHESIA CARE UNIT">PACU POST ANESTHESIA CARE UNIT</option>
+                                    <option value="PHY/OCC THERAPY - INPATIENT">PHY/OCC THERAPY - INPATIENT</option>
+                                    <option value="PT GAIT TRAINING/15MIN">PT GAIT TRAINING/15MIN</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" id="table-wrap">
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </section> <!-- content ends -->
+
+        <!-- footer starts -->
+        <footer>
+            <div class="container">
+                footer
+            </div>
+        </footer> <!-- footer ends -->
+
+
+        <!-- scripts -->
+
+        <script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/costIncomeData.js"></script>
+
+        <!-- custom script -->
+
+        <script type="text/javascript" src="js/script.js"></script>
+
+        <script type="text/javascript">
+
+
+
+            $(document).ready(function(e) {
+                //change number format
+                $.fn.digits = function() {
+                    return this.each(function() {
+                        $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+                    })
+                }
+
+
+                //update table when the document is loaded with default settings
+                update_cost_table();
+
+                //update table when clicked on the sidebar menus
+
+                $("#categories li").click(function() {
+                    //alert('check');
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    //update table
+                    update_cost_table();
+                    //alert('table update');
+                });
+
+
+                //update table on change on selection
+
+                $('#department').on('change', function(e) {
+                    update_cost_table();
+                    //alert('table updated');
+                });
+
+
+            });
+
+            $(document).ready(function(e) {
+
+                var json = costDepartments;
+
+                var json_parsed = $.parseJSON(json);
+
+                for (var u = 0; u < json_parsed.Users.length; u++) {
+                    alert('hello');
+                }
+
+                var patient_activities = '[{"date": "2013/03/18", "department":"Imaging", "category":"Scheduling","description":"chatting with oncologist", "cost": 273.35},{"date": "2013/03/18", "department":"Imaging", "category":"Diagnostics","description":"chatting with oncologist", "cost": 273.35},{"date": "2013/03/18", "department":"Radiation", "category":"Scheduling","description":"chatting with oncologist", "cost": 85.0},{"date": "2013/03/18", "department":"Radiation", "category":"Diagnostics","description":"chatting with oncologist", "cost": 540.0},{"date": "2013/03/18", "department":"Radiation", "category":"Intervention","description":"chatting with oncologist", "cost": 2175.0},{"date": "2013/03/18", "department":"Radiation", "category":"Medication","description":"chatting with oncologist", "cost": 950.0},{"date": "2013/03/18", "department":"Radiation", "category":"Other","description":"chatting with oncologist", "cost": 250.0}]';
+
+                var table_id = 0;
+                $("#functional_department li").click(function() {
+                    var department_selected = $(this).text();
+                    $('.by-level').text('Activity Category');
+                    $("#cost-in-level").text(department_selected);
+                    $('.cost-table').remove();
+                    alert(department_selected);
+
+                    //create table
+                    table_id++;
+                    var table = "<table class='table-hover cost-table' id='" + table_id + "' width='100%'><thead><tr><th>Date</th><th>Activity Category</th><th>Description</th><th>Cost</th></tr></thead><tbody><tbody></table>";
+
+                    var default_table = $("#defualt-cost-table").clone();
+
+                    $("#default-cost-table").hide();
+
+                    $("#table-wrap").after(table);
+
+                    var json = $.parseJSON(patient_activities);
+
+                    var total_cost = 0;
+
+                    $.each(json, function() {
+                        var department = this['department'];
+                        if (department_selected == department) {
+                            var category = this['category'];
+                            var description = this['description'];
+                            var date = this['date'];
+                            var cost = this['cost'];
+                            total_cost += cost;
+                            var row = '<tr><td>' + date + '</td><td>' + category + '</td><td>' + description + '</td><td>' + cost + '</td></tr>';
+                            $("#" + table_id + " tbody").append(row);
+                        }
+                    });
+
+                    alert('total cost is = $' + total_cost);
+                    $("span.cost-number").text('$' + total_cost);
+
+                });
+
+            });
+
+        </script>
+
+    </body>
+</html>
