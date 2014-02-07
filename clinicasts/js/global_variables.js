@@ -160,44 +160,6 @@ $(function() {
         getIncomeDepartment: function(index) {
             return $income_department[index];
         },
-                
-        getSubDepartmentCost: function(index) {
-            if (index >= 0 && index <= 8) {
-                return $sub_department_cost.subDepartmentCosts_0;
-            } else if (index == 1) {
-                return $sub_department_cost.subDepartmentCosts_1;
-            } else if (index == 2) {
-                return $sub_department_cost.subDepartmentCosts_2;
-            } else if (index == 3) {
-                return $sub_department_cost.subDepartmentCosts_3;
-            } else if (index == 4) {
-                return $sub_department_cost.subDepartmentCosts_4;
-            } else if (index == 5) {
-                return $sub_department_cost.subDepartmentCosts_5;
-            } else if (index == 6) {
-                return $sub_department_cost.subDepartmentCosts_6;
-            } else if (index == 7) {
-                return $sub_department_cost.subDepartmentCosts_7;
-            } else if (index == 8) {
-                return $sub_department_cost.subDepartmentCosts_8;
-            }
-        },
-        /**
-         * gets the total cost for given hospital, cancer combination
-         * @param {string} hospital
-         * @param {string} cancer
-         * @returns {String} total cost to be displayed on the tab
-         */
-        getOverAllCost: function(hospital, cancer) {
-            department = "All Department";
-            var dataIndex = $global_variables.getDataIndex(hospital, cancer);
-            var subDepartmentCosts = $global_variables.getSubDepartmentCost(dataIndex);
-            var totalCost = 0;
-            $.each(subDepartmentCosts, function(k, v) {
-                totalCost += v['cost'];
-            });
-            return '$' + totalCost;
-        },
         getNetIncome: function(hospital, cancer) {
             department = "All Department";
         },

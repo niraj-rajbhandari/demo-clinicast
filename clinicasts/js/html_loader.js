@@ -136,7 +136,7 @@ $(function() {
             var department = $('#department').val();
 //            $html_loader.loadSubDepartmentTableForOverAllCost(hospital, cancer, department, active);
             $html_loader.loadDepartmentCostTable(costDepartmentByCategory, active);
-            var overAllCost = $global_variables.getOverAllCost(hospital, cancer);
+//            var overAllCost = $global_variables.getOverAllCost(hospital, cancer);
             $html_loader.setTotalCostIncome(dataIndex);
             $('.box').removeClass('box-active');
             $('.over-all-cost .box').addClass('box-active');
@@ -160,9 +160,6 @@ $(function() {
             $html_loader.loadDepartmentDropList(active);
 //            $html_loader.loadSubDepartmentTableForNetIncome(hospital, cancer, department, active);
             $html_loader.loadDepartmentIncomeTable(incomeDepartmentByCategory, active);
-            var overAllCost = $global_variables.getOverAllCost(hospital, cancer);
-            $('.overall-cost').html('');
-            $('.overall-cost').html(overAllCost).digits();
             $('.box').removeClass('box-active');
             $('.net-income .box').addClass('box-active');
             $('.net-income-tab').css('display', '');
